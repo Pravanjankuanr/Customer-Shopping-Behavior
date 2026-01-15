@@ -1,0 +1,3 @@
+2026-01-16 00:14:32,484 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-16 00:14:33,015 - INFO - ------------Ingestion Completed-------------
+2026-01-16 00:14:33,015 - INFO - Total time taken: 0.010304697354634603 minutes
