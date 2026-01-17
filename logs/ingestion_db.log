@@ -1,3 +1,38 @@
 2026-01-16 00:14:32,484 - INFO - Ingesting customer_shopping_behavior.csv in db
 2026-01-16 00:14:33,015 - INFO - ------------Ingestion Completed-------------
 2026-01-16 00:14:33,015 - INFO - Total time taken: 0.010304697354634603 minutes
+2026-01-16 23:11:44,945 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-16 23:12:35,636 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-16 23:13:00,861 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-16 23:13:00,861 - INFO - (3900, 18)
+2026-01-16 23:13:01,742 - INFO - ------------Ingestion Completed-------------
+2026-01-16 23:13:01,746 - INFO - Total time taken: 0.014922237396240235 minutes
+2026-01-16 23:15:26,549 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-16 23:15:26,551 - INFO - Total 3900 rows and 18 columns inserted
+2026-01-16 23:15:27,348 - INFO - ------------Ingestion Completed-------------
+2026-01-16 23:15:27,348 - INFO - Total time taken: 0.013640467325846355 minutes
+2026-01-16 23:17:07,761 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-16 23:17:08,635 - INFO - ------------Ingestion Completed-------------
+2026-01-16 23:17:08,635 - INFO - Total 3900 rows and 18 columns inserted
+2026-01-16 23:17:08,635 - INFO - Total time taken: 0.014903942743937174 minutes
+2026-01-17 15:47:17,381 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-17 15:47:17,934 - INFO - Ingesting customer_shopping_behavior_data2.csv in db
+2026-01-17 15:47:18,280 - INFO - ------------Ingestion Completed-------------
+2026-01-17 15:47:18,280 - INFO - Total 4400 rows and 18 columns inserted
+2026-01-17 15:47:18,280 - INFO - Total time taken: 0.015621678034464518 minutes
+2026-01-17 15:49:36,781 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-17 15:49:37,107 - INFO - Ingesting customer_shopping_behavior_data2.csv in db
+2026-01-17 15:49:37,396 - INFO - ------------Ingestion Completed-------------
+2026-01-17 15:49:37,396 - INFO - Total 4400 rows and 18 columns inserted
+2026-01-17 15:49:37,396 - INFO - Total time taken: 0.010529895623524984 minutes
+2026-01-17 15:50:22,815 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-17 15:50:23,213 - INFO - Ingesting customer_shopping_behavior_data2.csv in db
+2026-01-17 15:50:23,585 - INFO - ------------Ingestion Completed-------------
+2026-01-17 15:50:23,585 - INFO - Total 4400 rows and 18 columns inserted
+2026-01-17 15:50:23,585 - INFO - Total time taken: 0.013078908125559488 minutes
+2026-01-17 15:53:59,127 - INFO - Ingesting customer_shopping_behavior.csv in db
+2026-01-17 15:53:59,678 - INFO - Total 3900 rows and 18 columns inserted
+2026-01-17 15:53:59,694 - INFO - Ingesting customer_shopping_behavior_data2.csv in db
+2026-01-17 15:54:00,116 - INFO - Total 4400 rows and 18 columns inserted
+2026-01-17 15:54:00,118 - INFO - ------------Ingestion Completed-------------
+2026-01-17 15:54:00,118 - INFO - Total time taken: 0.016888423760732015 minutes
