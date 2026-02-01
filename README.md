@@ -1,102 +1,216 @@
 # Customer Shopping Behavior Analysis
 
-## Overview
+## 📋 Overview
 
-This project focuses on analyzing customer shopping behavior data. The primary goal is to ingest raw customer shopping data from CSV files into a PostgreSQL database for efficient querying and analysis, followed by exploratory data analysis to uncover insights on revenue optimization without increasing discounts.
+This project provides a comprehensive analysis of customer shopping behavior data to uncover insights on revenue optimization without increasing discounts. The solution includes automated data ingestion from CSV files into a PostgreSQL database, coupled with exploratory data analysis to identify key trends, patterns, and business opportunities.
 
-## Features
+**Project Goal**: Extract actionable insights from customer shopping behavior to optimize revenue while maintaining or reducing discount rates.
 
-- **Data Ingestion**: Automated ingestion of CSV data into PostgreSQL database
-- **Logging**: Comprehensive logging of the ingestion process with timestamps
-- **Database Setup**: SQL scripts for creating the retail database and customer_shopping table
-- **Performance Tracking**: Time tracking for data ingestion operations
-- **Exploratory Data Analysis**: Analysis of discount impact, category performance, repeat customer behavior, and revenue metrics
+## ✨ Features
 
-## Technologies Used
+- **Data Ingestion**: Fully automated ingestion of CSV data into PostgreSQL database with error handling
+- **Comprehensive Logging**: Detailed logging of all ingestion operations with timestamps and row counts
+- **Database Setup**: SQL scripts for creating the retail database and customer_shopping table schema
+- **Performance Tracking**: Automatic time tracking and reporting for data ingestion operations
+- **Exploratory Data Analysis**: Deep-dive analysis including:
+  - Discount impact assessment on customer behavior and revenue
+  - Category performance analysis
+  - Repeat customer patterns and retention metrics
+  - Revenue optimization opportunities
+  - Customer segmentation insights
 
-- **Python**: Core programming language
-- **Pandas**: Data manipulation and analysis
-- **SQLAlchemy**: Database ORM for Python
-- **PostgreSQL**: Relational database management system
-- **Psycopg2**: PostgreSQL adapter for Python
-- **Jupyter Notebook**: For interactive data analysis
+## 🛠 Technologies & Tools
 
-## Prerequisites
+| Technology | Purpose |
+|-----------|---------|
+| **Python 3.x** | Core programming language |
+| **Pandas** | Data manipulation, cleaning, and analysis |
+| **SQLAlchemy** | Database ORM for Python |
+| **PostgreSQL** | Relational database management system |
+| **Psycopg2** | PostgreSQL adapter for Python |
+| **Jupyter Notebook** | Interactive data analysis and visualization |
+| **Matplotlib/Seaborn** | Data visualization (optional) |
 
-- Python 3.x
-- PostgreSQL server running locally
-- Jupyter Notebook (for running the EDA notebook)
-- Required Python packages (see Installation)
+## 📦 Project Structure
 
-## Installation
+```
+Customer-Shopping-Behavior/
+├── data/                                    # CSV data files
+│   ├── customer_shopping_behavior.csv
+│   └── customer_shopping_behavior_data2.csv
+├── logs/                                    # Ingestion and application logs
+│   └── ingestion_db.log
+├── images/                                  # Analysis visualizations and charts
+├── Exploratory Data Analysis.ipynb         # Main analysis notebook
+├── SQL Script.sql                          # Database schema and setup
+├── ingestion_db.py                         # Data ingestion script
+├── README.md                               # Project documentation
+├── Business Problem.rtf                    # Business requirements
+└── Analysis Report.docx                    # Final analysis report
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Pravanjankuanr/Customer-Shopping-Behavior.git
-   cd Customer-Shopping-Behavior
-   ```
+## ⚙️ Prerequisites
 
-2. Install required Python packages:
-   ```bash
-   pip install pandas sqlalchemy psycopg2-binary jupyter
-   ```
+- **Python 3.7** or higher
+- **PostgreSQL** server (running locally or accessible)
+- **Jupyter Notebook** (for interactive analysis)
+- **pip** package manager
+- 50 MB+ disk space for database and logs
 
-3. Set up PostgreSQL database:
-   - Ensure PostgreSQL is installed and running
-   - Update the database connection string in `ingestion_db.py` and `Exploratory Data Analysis.ipynb` if necessary
-   - Run the SQL script to create the database and table:
-     ```sql
-     -- Execute the contents of SQL Script.sql
-     ```
+## 📥 Installation & Setup
 
-## Usage
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Pravanjankuanr/Customer-Shopping-Behavior.git
+cd Customer-Shopping-Behavior
+```
 
-### Data Ingestion
+### 2. Install Python Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-1. Place your CSV data files in the `data/` directory
+Or install packages individually:
+```bash
+pip install pandas sqlalchemy psycopg2-binary jupyter
+```
 
-2. Run the data ingestion script:
+### 3. Configure Database Connection
+
+Update the database connection string in `ingestion_db.py`:
+```python
+engine = create_engine("postgresql+psycopg2://username:password@localhost:port/database_name")
+```
+
+**Default Configuration**:
+- Host: localhost
+- Port: 5432 (or 5434 in this project)
+- Username: postgres
+- Database: retail
+
+### 4. Initialize Database
+
+Execute the SQL script to create database schema:
+```bash
+psql -U postgres -f "SQL Script.sql"
+```
+
+Or in PostgreSQL client:
+```sql
+-- Execute contents of SQL Script.sql
+```
+
+## 🚀 Usage
+
+### Running Data Ingestion
+
+1. **Place CSV files** in the `data/` directory
+2. **Execute the ingestion script**:
    ```bash
    python ingestion_db.py
    ```
-
-3. Check the logs in `logs/ingestion_db.log` for process details
-
-### Exploratory Data Analysis
-
-1. Ensure the data is ingested into the database
-
-2. Open the Jupyter notebook:
+3. **Monitor logs** for ingestion status:
    ```bash
-   jupyter notebook "Exploratory Data Analysis.ipynb"
+   tail -f logs/ingestion_db.log
    ```
 
-3. Run the cells in order to perform the analysis
+**Output**: 
+- Data ingested into `customer_shopping` table
+- Execution time logged
+- Row and column counts tracked
 
-## Data Description
+### Running Exploratory Data Analysis
 
-The dataset contains customer shopping behavior information with the following columns:
+1. **Start Jupyter Notebook**:
+   ```bash
+   jupyter notebook
+   ```
 
-- `customer_id`: Unique identifier for each customer
-- `age`: Age of the customer
-- `gender`: Gender of the customer
-- `location`: Customer's location
-- `category`: Product category purchased
-- `item_purchased`: Specific item bought
-- `size`: Size of the item
-- `color`: Color of the item
-- `season`: Season of purchase
-- `purchase_amount`: Amount spent on purchase (USD)
-- `purchase_frequency`: How often the customer makes purchases
-- `previous_purchases`: Number of previous purchases
-- `discount_applied`: Whether a discount was applied (Yes/No)
-- `promo_code_used`: Whether a promo code was used (Yes/No)
-- `subscription_status`: Customer's subscription status (Yes/No)
-- `shipping_type`: Type of shipping selected
-- `payment_method`: Payment method used
-- `review_rating`: Customer's review rating (1-5 scale)
+2. **Open** `Exploratory Data Analysis.ipynb`
 
-Dataset size: 3900 rows, 18 columns. Missing values in `review_rating` were filled with the mean value.
+3. **Execute cells** sequentially to:
+   - Load data from database
+   - Perform statistical analysis
+   - Generate visualizations
+   - Extract business insights
+
+## 📊 Dataset Information
+
+### Data Schema
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `customer_id` | Integer | Unique customer identifier |
+| `age` | Integer | Customer age |
+| `gender` | String | Customer gender |
+| `location` | String | Customer's geographic location |
+| `category` | String | Product category purchased |
+| `item_purchased` | String | Specific item description |
+| `size` | String | Item size |
+| `color` | String | Item color |
+| `season` | String | Season of purchase |
+| `purchase_amount` | Float | Transaction amount (USD) |
+| `purchase_frequency` | String | How often customer purchases |
+| `previous_purchases` | Integer | Count of prior purchases |
+| `discount_applied` | String | Discount status (Yes/No) |
+| `promo_code_used` | String | Promo code status (Yes/No) |
+| `subscription_status` | String | Subscription status (Yes/No) |
+| `shipping_type` | String | Shipping method selected |
+| `payment_method` | String | Payment method used |
+| `review_rating` | Float | Review score (1-5 scale) |
+
+### Dataset Statistics
+
+- **Total Records**: 3,900 rows
+- **Columns**: 18
+- **Data Quality**: Missing values in `review_rating` filled with mean value
+- **Time Period**: [Add if known]
+
+## 🔍 Key Analysis Areas
+
+1. **Discount Impact Analysis**: How discounts affect customer behavior and revenue
+2. **Category Performance**: Which product categories drive revenue
+3. **Customer Segmentation**: Identifying high-value and repeat customers
+4. **Revenue Optimization**: Strategies to increase revenue without increased discounts
+5. **Payment & Shipping Trends**: Preferences affecting conversion rates
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+| Issue | Solution |
+|-------|----------|
+| **PostgreSQL connection error** | Verify PostgreSQL is running; check connection string in `ingestion_db.py` |
+| **Module not found (pandas, sqlalchemy)** | Run `pip install -r requirements.txt` |
+| **Permission denied on logs/** | Ensure write permissions; create directory if missing: `mkdir logs` |
+| **CSV file not found** | Verify CSV files are in `data/` directory |
+| **Database already exists** | Drop existing database: `DROP DATABASE retail;` |
+
+## 📈 Expected Outcomes
+
+After running the analysis, you should obtain:
+- Key metrics on discount effectiveness
+- Revenue per customer segment
+- Product category performance rankings
+- Customer retention patterns
+- Actionable recommendations for revenue optimization
+
+## 👥 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 📧 Contact & Support
+
+For questions or issues, please open an issue on GitHub or contact the project maintainer.
+
+---
+
+**Last Updated**: February 2, 2026  
+**Version**: 1.0
 
 ## Exploratory Data Analysis Insights
 
