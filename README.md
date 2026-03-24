@@ -34,19 +34,20 @@ This project provides a comprehensive analysis of customer shopping behavior dat
 ## 📦 Project Structure
 
 ```
-Customer-Shopping-Behavior/
+Customer Shopping Behavior/
 ├── data/                                    # CSV data files
 │   ├── customer_shopping_behavior.csv
 │   └── customer_shopping_behavior_data2.csv
 ├── logs/                                    # Ingestion and application logs
-│   └── ingestion_db.log
 ├── images/                                  # Analysis visualizations and charts
+│   └── icons/
 ├── Exploratory Data Analysis.ipynb         # Main analysis notebook
 ├── SQL Script.sql                          # Database schema and setup
 ├── ingestion_db.py                         # Data ingestion script
+├── requirements.txt                        # Python dependencies
 ├── README.md                               # Project documentation
-├── Business Problem.rtf                    # Business requirements
-└── Analysis Report.docx                    # Final analysis report
+├── .gitignore                              # Git ignore rules
+└── .gitignore                              # Git ignore rules
 ```
 
 ## ⚙️ Prerequisites
@@ -214,8 +215,8 @@ For questions or issues, please open an issue on GitHub or contact the project m
 
 ---
 
-**Last Updated**: February 2, 2026  
-**Version**: 1.0
+**Last Updated**: March 24, 2026  
+**Version**: 1.1
 
 ## Exploratory Data Analysis Insights
 
