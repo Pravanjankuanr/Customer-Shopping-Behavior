@@ -8,7 +8,7 @@ This project provides a comprehensive analysis of customer shopping behavior dat
 
 ## ✨ Features
 
-- **Data Ingestion**: Fully automated ingestion of CSV data into PostgreSQL database with error handling
+- **Data Ingestion**: Fully automated ingestion of all CSVs in `data/` into `customer_shopping` table with row/column tracking
 - **Comprehensive Logging**: Detailed logging of all ingestion operations with timestamps and row counts
 - **Database Setup**: SQL scripts for creating the retail database and customer_shopping table schema
 - **Performance Tracking**: Automatic time tracking and reporting for data ingestion operations
@@ -77,16 +77,21 @@ pip install pandas sqlalchemy psycopg2-binary jupyter
 
 ### 3. Configure Database Connection
 
-Update the database connection string in `ingestion_db.py`:
+Update the database connection string in `ingestion_db.py` to match your environment.
+
+Example (project default):
 ```python
-engine = create_engine("postgresql+psycopg2://username:password@localhost:port/database_name")
+engine = create_engine("postgresql+psycopg2://postgres:Raja12@localhost:5434/retail")
 ```
 
-**Default Configuration**:
+**Default Configuration (as used in this repo)**:
 - Host: localhost
-- Port: 5432 (or 5434 in this project)
+- Port: 5434
 - Username: postgres
+- Password: Raja12
 - Database: retail
+
+> ⚠️ Do not commit real credentials to public repositories. Use environment variables or a `.env` file for production.
 
 ### 4. Initialize Database
 
@@ -152,9 +157,9 @@ Or in PostgreSQL client:
 | `purchase_amount` | Float | Transaction amount (USD) |
 | `purchase_frequency` | String | How often customer purchases |
 | `previous_purchases` | Integer | Count of prior purchases |
-| `discount_applied` | String | Discount status (Yes/No) |
-| `promo_code_used` | String | Promo code status (Yes/No) |
-| `subscription_status` | String | Subscription status (Yes/No) |
+| `discount_applied` | Boolean | Discount applied (true/false) |
+| `promo_code_used` | Boolean | Promo code used (true/false) |
+| `subscription_status` | Boolean | Subscription active (true/false) |
 | `shipping_type` | String | Shipping method selected |
 | `payment_method` | String | Payment method used |
 | `review_rating` | Float | Review score (1-5 scale) |
