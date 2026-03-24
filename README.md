@@ -47,7 +47,6 @@ Customer Shopping Behavior/
 ├── requirements.txt                        # Python dependencies
 ├── README.md                               # Project documentation
 ├── .gitignore                              # Git ignore rules
-└── .gitignore                              # Git ignore rules
 ```
 
 ## ⚙️ Prerequisites
@@ -82,15 +81,15 @@ Update the database connection string in `ingestion_db.py` to match your environ
 
 Example (project default):
 ```python
-engine = create_engine("postgresql+psycopg2://postgres:Raja12@localhost:5434/retail")
+engine = create_engine("postgresql+psycopg2://username:password@localhost:5434/database")
 ```
 
 **Default Configuration (as used in this repo)**:
 - Host: localhost
 - Port: 5434
-- Username: postgres
-- Password: Raja12
-- Database: retail
+- Username: userName
+- Password: yourpassword
+- Database: database_name
 
 > ⚠️ Do not commit real credentials to public repositories. Use environment variables or a `.env` file for production.
 
@@ -167,7 +166,7 @@ Or in PostgreSQL client:
 
 ### Dataset Statistics
 
-- **Total Records**: 3,900 rows
+- **Total Records**: 7,800 rows
 - **Columns**: 18
 - **Data Quality**: Missing values in `review_rating` filled with mean value
 - **Time Period**: [Add if known]
@@ -201,18 +200,6 @@ After running the analysis, you should obtain:
 - Customer retention patterns
 - Actionable recommendations for revenue optimization
 
-## 👥 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 📧 Contact & Support
-
-For questions or issues, please open an issue on GitHub or contact the project maintainer.
-
 ---
 
 **Last Updated**: March 24, 2026  
@@ -244,34 +231,3 @@ The EDA notebook addresses the key business question: "How can the business incr
 - Revenue breakdowns by discount status and categories
 
 *Note: Actual numerical results depend on running the notebook with your data.*
-
-## Project Structure
-
-```
-Customer-Shopping-Behavior/
-├── Exploratory Data Analysis.ipynb  # Jupyter notebook for data analysis
-├── ingestion_db.py                  # Main data ingestion script
-├── SQL Script.sql                   # Database setup scripts
-├── README.md                        # Project documentation
-├── data/
-│   ├── customer_shopping_behavior.csv       # Primary raw data file
-│   └── customer_shopping_behavior_data2.csv # Additional data file
-├── images/                          # Directory for analysis visualizations
-└── logs/
-    └── ingestion_db.log             # Ingestion logs
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-For questions or suggestions, please open an issue on GitHub.
